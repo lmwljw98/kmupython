@@ -13,19 +13,19 @@ def s_char_change(thing) :
 def word_count(w_list) :
     
     for w in w_list:
-            
+     
         if w[0] == "'" :
             w = w[1:]
-                
-        elif w[-1] == "'" :
-            w = w[:len(w)-1]
 
-        if w != "" :
-            if w not in word_dic:
-                word_dic[w] = 1
+	if w != "" :      
+		if w[-1] == "'" :
+			w = w[:len(w)-1]
 
-            else:
-                word_dic[w] += 1
+		if w not in word_dic:
+			word_dic[w] = 1
+
+		else:
+			word_dic[w] += 1
     
 def solution() :
     
@@ -41,7 +41,7 @@ def solution() :
 
         word_count(wordList)
         
-        for word in sorted(word_dic, key = word_dic.get, reverse=True):
+        for word in sorted(sorted(word_dic), key = word_dic.get, reverse=True):
             ret_list.append((word, word_dic[word]))
             
         f.close()
