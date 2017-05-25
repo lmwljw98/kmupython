@@ -17,15 +17,15 @@ def word_count(w_list) :
         if w[0] == "'" :
             w = w[1:]
 
-	if w != "" :      
-		if w[-1] == "'" :
-			w = w[:len(w)-1]
+        if w != "" :      
+            if w[-1] == "'" :
+                w = w[:len(w)-1]
 
-		if w not in word_dic:
-			word_dic[w] = 1
+            if w not in word_dic:
+                word_dic[w] = 1
 
-		else:
-			word_dic[w] += 1
+            else:
+                word_dic[w] += 1
     
 def solution() :
     
